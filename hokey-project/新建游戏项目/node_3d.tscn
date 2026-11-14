@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cab14jvdlyxky" path="res://model_puck/texture/OIP.webp" id="3_a0tk4"]
 [ext_resource type="PackedScene" uid="uid://bdx4qofxnbsar" path="res://model_puck/puck_striker2.glb" id="4_jka67"]
 [ext_resource type="Script" uid="uid://0tu486qn2klw" path="res://puck.gd" id="5_jka67"]
+[ext_resource type="Script" uid="uid://dyufxofwmx4c8" path="res://blue_light.gd" id="6_i5arm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
 albedo_color = Color(0.22352941, 0.77254903, 0.73333335, 1)
@@ -33,13 +34,17 @@ roughness = 0.46
 emission_enabled = true
 emission = Color(0.9080729, 0.59743655, 0.25265297, 1)
 
+[sub_resource type="Environment" id="Environment_pqhur"]
+background_mode = 1
+background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
+
 [node name="Node3D" type="Node3D" unique_id=574067357]
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17422958, -0.005613923, 0.91289306)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22566599, 0.012103081, 1.1889238)
 
 [node name="PaddleBlue" parent="." unique_id=533093440 instance=ExtResource("2_r3fl7")]
-transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.09928626, 0.864, 0.4412263)
+transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.050656825, 0.8616393, 0.54842)
 
 [node name="Paddle" parent="PaddleBlue" index="0" unique_id=1836951715]
 material_override = SubResource("StandardMaterial3D_i5arm")
@@ -51,12 +56,39 @@ transform = Transform3D(14.996353, 0.027699279, -0.32957137, -0.036129955, 14.99
 material_override = SubResource("StandardMaterial3D_jka67")
 
 [node name="Puck2" parent="." unique_id=994401809 instance=ExtResource("4_jka67")]
-transform = Transform3D(0.01, 0, 0, 0, 0.02, 0, 0, 0, 0.01, 0.34572554, 1.1945821, 0.74653816)
+transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0.06424403, 1.1945821, -0.9880376)
 
-[node name="Puck" parent="Puck2" index="0" unique_id=1745600836]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.905151, 0)
+[node name="Puck" parent="Puck2" index="0" unique_id=822244714]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 13.076447, -9.221506, 84.12697)
 material_override = SubResource("StandardMaterial3D_x7o7g")
 script = ExtResource("5_jka67")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1262472059]
+transform = Transform3D(1, 0, 0, 0, 0.71325046, 0.70090926, 0, -0.70090926, 0.71325046, 0.22804642, 1.495193, 2.1123455)
+current = true
+near = 0.042
+far = 2862.42
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1801064971]
+environment = SubResource("Environment_pqhur")
+
+[node name="main light" type="DirectionalLight3D" parent="." unique_id=1106701554]
+transform = Transform3D(1, 0, 0, 0, -0.54756314, 0.83676445, 0, -0.83676445, -0.54756314, 0.25232542, 1.2608476, 1.404503)
+light_color = Color(0.8392157, 0.9137255, 1, 1)
+light_energy = 0.41
+
+[node name="Blue Light" type="OmniLight3D" parent="." unique_id=1752234653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22345543, 1.2052267, 0.9799292)
+light_color = Color(0.17254902, 0.5137255, 1, 1)
+light_energy = 2.0
+script = ExtResource("6_i5arm")
+
+[node name="red light" type="OmniLight3D" parent="." unique_id=1999198257]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25014842, 1.1588413, 1.6997616)
+light_color = Color(0.8117647, 0.18431373, 0.34901962, 1)
+light_energy = 2.0
+script = ExtResource("6_i5arm")
+color_offset = 3
 
 [editable path="PaddleBlue"]
 [editable path="PaddleRed"]
