@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://clmlkhvs4dcfp"]
 
+[ext_resource type="Script" uid="uid://l8nyft0cli1d" path="res://node_3d.gd" id="1_6iypd"]
 [ext_resource type="PackedScene" uid="uid://cbecrqxtgb7h0" path="res://model_table/air-hockey-game-table (1).glb" id="1_noarx"]
 [ext_resource type="PackedScene" uid="uid://dcirh6l6evp02" path="res://paddle_blue.tscn" id="2_r3fl7"]
 [ext_resource type="Texture2D" uid="uid://cab14jvdlyxky" path="res://model_puck/texture/OIP.webp" id="3_a0tk4"]
@@ -46,7 +47,11 @@ emission = Color(0.5148712, 0.08195656, 9.62615e-08, 1)
 background_mode = 1
 background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_pqhur"]
+size = Vector3(1, 1, 0.5)
+
 [node name="Node3D" type="Node3D" unique_id=574067357]
+script = ExtResource("1_6iypd")
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22374481, 0.0080657005, 1.1907585)
@@ -171,6 +176,7 @@ color_offset = 3
 
 [node name="Puck2" parent="." unique_id=1585656555 instance=ExtResource("6_wc5p8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, -0.029759884, -0.21098918, -0.33598506)
+can_sleep = false
 contact_monitor = true
 max_contacts_reported = 8
 
@@ -178,10 +184,26 @@ max_contacts_reported = 8
 transform = Transform3D(0.0005922692, 1.999268, 0.05410101, 0.021885615, -0.05410425, 1.9991482, 1.9998802, 0, -0.021893628, 0.3485357, 0.8202695, 1.1749161)
 script = ExtResource("9_4arys")
 
+[node name="BlueGoal" type="Area3D" parent="." unique_id=1422897062]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.3281039)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueGoal" unique_id=1106578551]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26797253, 0)
+shape = SubResource("BoxShape3D_pqhur")
+
+[node name="RedGoal" type="Area3D" parent="." unique_id=1598962677]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.328)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RedGoal" unique_id=2117779388]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26797253, 0)
+shape = SubResource("BoxShape3D_pqhur")
+
 [connection signal="input_event" from="PaddleRed" to="PaddleRed" method="_on_input_event"]
 [connection signal="body_entered" from="Puck2" to="PaddleBlue" method="_on_puck_2_body_entered"]
 [connection signal="body_entered" from="Puck2" to="PaddleRed" method="_on_puck_2_body_entered"]
 [connection signal="body_entered" from="Puck2" to="Puck2" method="_on_body_entered"]
+[connection signal="body_entered" from="BlueGoal" to="." method="_on_blue_goal_body_entered"]
+[connection signal="body_entered" from="RedGoal" to="." method="_on_blue_goal_body_entered"]
 
 [editable path="PaddleBlue"]
 [editable path="PaddleRed"]
