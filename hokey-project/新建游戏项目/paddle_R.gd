@@ -1,4 +1,5 @@
 extends AnimatableBody3D
+@export var max_speed: float = 3.0
 var clickOn = false;
 var mouse
 var origin
@@ -7,6 +8,7 @@ var end
 var start_position: Vector3 
 var plane 
 var paddle_velocity = Vector3.ZERO
+var strike_velocity := Vector3.ZERO
 var previous_position;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,8 +63,14 @@ func _physics_process(delta: float) -> void:
 		if hit != null:
 			var target: Vector3 = hit + drag_offset
 			target.y = start_position.y
+			var motion := target - global_position
+			motion.y = 0.0
+			motion = motion.limit_length(max_speed * delta)
 
-			move_and_collide(target - global_position)
+			strike_velocity = motion / delta
+
+			move_and_collide(motion)
+
 
 	paddle_velocity = (global_position - before) / delta
 
