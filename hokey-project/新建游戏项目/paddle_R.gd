@@ -26,13 +26,15 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("mouseClick"):
 		clickOn = false
 	if clickOn == true:
-		var position = getPosition()
-		
-		if position != null:
-			global_position = Vector3(
-			position.x,
-			start_position.y,
-			position.z)
+		# target 是鼠标射线计算出的世界坐标目标。
+		var hit = getPosition()
+		var target := Vector3(hit.x, start_position.y, hit.z)
+		var motion := target - global_position
+
+# 限制每个物理帧的移动距离。
+		motion = motion.limit_length(300 * delta)
+
+		move_and_collide(motion)
 		
 		
 
