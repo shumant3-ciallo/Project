@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://cab14jvdlyxky" path="res://model_puck/texture/OIP.webp" id="1_6bcl5"]
 
-[sub_resource type="GDScript" id="GDScript_sptxf"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r3fl7"]
 albedo_color = Color(0.22352941, 0.77254903, 0.73333335, 1)
 albedo_texture = ExtResource("1_6bcl5")
@@ -46,9 +44,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jh75e")
 
-[node name="PaddleBlue" type="Node3D" unique_id=533093440]
+[node name="Paddle_Origin" type="AnimatableBody3D" unique_id=518207072]
 transform = Transform3D(14.996353, 0.027699279, -0.32957137, -0.036129955, 14.995047, -0.3837264, 0.32875398, 0.38442695, 14.991467, 0, 0, 0)
-script = SubResource("GDScript_sptxf")
 
 [node name="Paddle" type="MeshInstance3D" parent="." unique_id=1836951715]
 material_override = SubResource("StandardMaterial3D_r3fl7")
