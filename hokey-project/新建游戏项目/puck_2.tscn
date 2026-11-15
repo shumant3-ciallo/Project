@@ -49,8 +49,8 @@ shadow_mesh = SubResource("ArrayMesh_l1qen")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_puck_base"]
 margin = 0.001
-height = 0.598943649853289
-radius = 3.47317972891979
+height = 0.59894365
+radius = 3.4731798
 
 [node name="Puck2" type="RigidBody3D" unique_id=1585656555]
 transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0, 0, 0)
@@ -64,5 +64,5 @@ mesh = SubResource("ArrayMesh_oeuyt")
 script = ExtResource("2_c5g8q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2037758692]
-position = Vector3(14.0056840869514, -8.92189377637471, 84.665694499256)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.005684, -8.921894, 84.665695)
 shape = SubResource("CylinderShape3D_puck_base")

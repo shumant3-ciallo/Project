@@ -50,7 +50,6 @@ func _physics_process(delta: float) -> void:
 			if hit != null:
 				clickOn = true
 
-				# 保留按下位置与球拍中心的距离，避免一按就跳动。
 				drag_offset = global_position - hit
 				drag_offset.y = 0.0
 
