@@ -49,7 +49,7 @@ background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
 [node name="Node3D" type="Node3D" unique_id=574067357]
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22544557, 0.0080657005, 1.1915879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22374481, 0.0080657005, 1.1907585)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Air hockey table2" unique_id=1128002633]
 
@@ -70,19 +70,19 @@ transform = Transform3D(0.99975693, 0.021990515, -0.0016521489, -0.0021033785, 0
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=891896576]
-transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, -0.45063528, 0.7529988, 0.82496846)
+transform = Transform3D(-0.057619344, 0.9981262, 0.020599142, -0.0021033785, 0.020512007, -0.9997875, -0.99833655, -0.05765042, 0.00091755064, -0.37506428, 0.7529988, 0.82496834)
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=1270576706]
-transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, -0.45063528, 0.7529988, -0.8229927)
+transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, -0.36469826, 0.7529988, -0.8229927)
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=1115019169]
-transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, 0.4490239, 0.7529988, 0.82496846)
+transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, 0.36253744, 0.7529988, 0.82496834)
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=1516086311]
-transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, 0.4490239, 0.7529988, -0.8265346)
+transform = Transform3D(-0.00966691, 0.99974245, 0.02053142, -0.0021033783, 0.020512005, -0.9997874, -0.99995106, -0.00970804, 0.0019045507, 0.36325175, 0.7529988, -0.8265346)
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=1671777580]
@@ -102,11 +102,11 @@ transform = Transform3D(0.9999978, 4.3144606e-05, -0.0021029357, -0.0021033783, 
 shape = SubResource("BoxShape3D_x7o7g")
 
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=2084474806]
-transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.029633641, 0.8960593, 0.8927506)
+transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.029633641, 0.86542314, 0.92248654)
 shape = SubResource("BoxShape3D_jsk3o")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=712886569]
-transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.029633641, 0.8960593, -0.86653346)
+transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.097277015, 0.86898553, -0.9166763)
 shape = SubResource("BoxShape3D_jsk3o")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=935752135]
@@ -132,6 +132,7 @@ shape = SubResource("CylinderShape3D_red_base")
 transform = Transform3D(14.996353, 0.027699279, -0.32957137, -0.036129955, 14.995047, -0.3837264, 0.32875398, 0.38442695, 14.991467, 0.22827893, 0.8676101, 1.8158437)
 sync_to_physics = false
 script = ExtResource("6_4arys")
+max_speed = null
 center_line = NodePath("../center_line")
 
 [node name="Paddle" parent="PaddleRed" index="0" unique_id=1836951715]

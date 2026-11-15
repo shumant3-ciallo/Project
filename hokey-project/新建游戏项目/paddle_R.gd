@@ -79,6 +79,7 @@ func _physics_process(delta: float) -> void:
 
 
 	paddle_velocity = (global_position - before) / delta
+	global_position.z = clamp(global_position.z,0.324225,2.083509)
 
 
 func _on_puck_2_body_entered(body: Node) -> void:
