@@ -96,7 +96,7 @@ background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
 [node name="Node3D" type="Node3D" unique_id=574067357]
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22544557, 0.0080657005, 1.1915879)
+transform = Transform3D(1, 0, 0, 0, 0.99977374, -0.021270277, 0, 0.021270277, 0.99977374, 0.22544557, -0.0139153, 1.1915879)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Air hockey table2" unique_id=1128002633]
 
@@ -153,23 +153,25 @@ transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.
 shape = SubResource("BoxShape3D_jsk3o")
 
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=712886569]
-transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.029633641, 0.8960593, -0.86653346)
+transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.010980494, 0.00012591289, -0.0002021815, -0.006944954, 0.9999759, 0.029633641, 0.8960593, -0.22977823)
 shape = SubResource("BoxShape3D_jsk3o")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=935752135]
 transform = Transform3D(-0.022706866, 0, 0.99974215, 0, 1, 0, -0.99974215, 0, -0.022706866, 0, 0.8152664, 0)
 shape = SubResource("BoxShape3D_cr0fq")
 
-[node name="PaddleBlue" parent="." unique_id=533093440 groups=["paddle"] instance=ExtResource("2_r3fl7")]
+[node name="PaddleBlue" parent="." unique_id=533093440 node_paths=PackedStringArray("puck") groups=["paddle"] instance=ExtResource("2_r3fl7")]
 transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.019606948, 0.87, 0.548)
 script = ExtResource("3_jsk3o")
+puck = NodePath("../Puck2")
 
 [node name="Paddle" parent="PaddleBlue" index="0" unique_id=1836951715]
+transform = Transform3D(1, 0, 0, 5.820766e-10, 1, 7.450581e-09, 3.7252903e-09, 3.7252903e-09, 1.0000002, 0.0005431024, 0.00063508004, 0.024765946)
 material_override = SubResource("StandardMaterial3D_i5arm")
 script = ExtResource("5_jsk3o")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="PaddleBlue" unique_id=517038514]
-transform = Transform3D(1, 1.1641532e-10, -1.8626451e-09, 1.7462298e-10, 1, 1.8626451e-09, 1.8626451e-09, 1.8626451e-09, 1.0000001, -4.079193e-07, -0.0020399839, -4.3287873e-06)
+transform = Transform3D(1, 1.1641532e-10, -1.8626451e-09, 5.820766e-10, 1, 5.5879354e-09, 3.7252903e-09, 3.7252903e-09, 1.0000002, 0.00064398185, -0.0012864657, 0.029380422)
 shape = SubResource("CylinderShape3D_red_base")
 
 [node name="PaddleRed" parent="." unique_id=581782901 groups=["paddle"] instance=ExtResource("2_r3fl7")]
@@ -184,7 +186,7 @@ transform = Transform3D(1, 1.1641532e-10, -1.8626451e-09, 1.7462298e-10, 1, 1.86
 shape = SubResource("CylinderShape3D_red_base")
 
 [node name="Puck2" type="RigidBody3D" parent="." unique_id=12309338]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06424403, 1.1945821, 0.8572273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06424403, 1.4095265, 0.8572273)
 contact_monitor = true
 max_contacts_reported = 8
 linear_damp = 0.5
@@ -214,7 +216,7 @@ light_color = Color(0.8392157, 0.9137255, 1, 1)
 light_energy = 0.41
 
 [node name="Blue Light" type="OmniLight3D" parent="." unique_id=1752234653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22345543, 1.2052267, 0.9799292)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28888255, 1.2052267, 0.9799292)
 light_color = Color(0.17254902, 0.5137255, 1, 1)
 light_energy = 2.0
 script = ExtResource("6_i5arm")
