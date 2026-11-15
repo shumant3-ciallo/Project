@@ -46,6 +46,9 @@ emission = Color(0.5148712, 0.08195656, 9.62615e-08, 1)
 background_mode = 1
 background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4arys"]
+bounce = 0.8
+
 [node name="Node3D" type="Node3D" unique_id=574067357]
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
@@ -110,7 +113,7 @@ transform = Transform3D(-0.010979354, -0.99991566, -0.0069467565, 0.9999398, -0.
 shape = SubResource("BoxShape3D_jsk3o")
 
 [node name="CollisionShape3D14" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=935752135]
-transform = Transform3D(-0.022706866, 0, 0.99974215, 0, 1, 0, -0.99974215, 0, -0.022706866, 0, 0.8152664, 0)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, 0, 0.81583446, 0)
 shape = SubResource("BoxShape3D_cr0fq")
 
 [node name="PaddleBlue" parent="." unique_id=533093440 node_paths=PackedStringArray("puck", "center_line") groups=["paddle"] instance=ExtResource("2_r3fl7")]
@@ -171,11 +174,12 @@ color_offset = 3
 
 [node name="Puck2" parent="." unique_id=1585656555 instance=ExtResource("6_wc5p8")]
 transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, -0.029759884, -0.21098918, -0.33598506)
+physics_material_override = SubResource("PhysicsMaterial_4arys")
 contact_monitor = true
 max_contacts_reported = 8
 
 [node name="center_line" type="Marker3D" parent="." unique_id=1336199658]
-transform = Transform3D(0.0005922692, 1.999268, 0.05410101, 0.021885615, -0.05410425, 1.9991482, 1.9998802, 0, -0.021893628, 0.3485357, 0.8202695, 1.1749161)
+transform = Transform3D(0.00059226924, 1.9992683, 0.054101016, 0.027217789, -0.054104064, 1.9990829, 1.9998149, 0.00014425728, -0.02722385, 0.3485357, 0.8248227, 1.1749161)
 script = ExtResource("9_4arys")
 
 [connection signal="input_event" from="PaddleRed" to="PaddleRed" method="_on_input_event"]

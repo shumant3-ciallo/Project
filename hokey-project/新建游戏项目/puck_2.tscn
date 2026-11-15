@@ -54,6 +54,7 @@ radius = 3.4731798
 
 [node name="Puck2" type="RigidBody3D" unique_id=1585656555]
 transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0, -0.20862389, -0.4508679)
+mass = 2.165
 linear_damp = 0.5
 script = ExtResource("1_c5g8q")
 
