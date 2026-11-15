@@ -8,6 +8,10 @@ var start_position: Vector3
 
 func _ready() -> void:
 	start_position = global_position
+	print("AI position: ", global_position)
+
+	if puck != null:
+		print("Puck position: ", puck.global_position)
 
 func _physics_process(delta: float) -> void:
 	if puck == null:
@@ -31,3 +35,7 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(movement)
 
 	paddle_velocity = (global_position - before) / delta
+
+
+func _on_puck_2_body_entered(_body: Node3D) -> void:
+	pass
