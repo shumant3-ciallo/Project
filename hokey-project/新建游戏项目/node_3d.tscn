@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cbecrqxtgb7h0" path="res://model_table/air-hockey-game-table (1).glb" id="1_noarx"]
 [ext_resource type="PackedScene" uid="uid://dcirh6l6evp02" path="res://paddle_blue.tscn" id="2_r3fl7"]
 [ext_resource type="Texture2D" uid="uid://cab14jvdlyxky" path="res://model_puck/texture/OIP.webp" id="3_a0tk4"]
-[ext_resource type="Script" uid="uid://bdc1fwaiugi4b" path="res://paddle_B.gd" id="3_jsk3o"]
 [ext_resource type="Script" uid="uid://csxo81ygvmtdl" path="res://paddle.gd" id="5_jsk3o"]
 [ext_resource type="Script" uid="uid://dbmis8xn4p15s" path="res://paddle_R.gd" id="6_4arys"]
 [ext_resource type="Script" uid="uid://dyufxofwmx4c8" path="res://blue_light.gd" id="6_i5arm"]
@@ -160,13 +159,11 @@ shape = SubResource("BoxShape3D_jsk3o")
 transform = Transform3D(-0.022706866, 0, 0.99974215, 0, 1, 0, -0.99974215, 0, -0.022706866, 0, 0.8152664, 0)
 shape = SubResource("BoxShape3D_cr0fq")
 
-[node name="PaddleBlue" parent="." unique_id=533093440 node_paths=PackedStringArray("puck") groups=["paddle"] instance=ExtResource("2_r3fl7")]
+[node name="PaddleBlue" parent="." unique_id=533093440 groups=["paddle"] instance=ExtResource("2_r3fl7")]
 transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.019606948, 0.87, 0.548)
-script = ExtResource("3_jsk3o")
-puck = NodePath("../Puck2")
 
 [node name="Paddle" parent="PaddleBlue" index="0" unique_id=1836951715]
-transform = Transform3D(1, 0, 0, 5.820766e-10, 1, 7.450581e-09, 3.7252903e-09, 3.7252903e-09, 1.0000002, 0.0005431024, 0.00063508004, 0.024765946)
+transform = Transform3D(1, -1.1641532e-09, 0, 3.0267984e-09, 1, 2.7939677e-08, 2.6077032e-08, 1.4901161e-08, 1.0000005, 0.0025628028, 0.0007257983, 0.014512975)
 material_override = SubResource("StandardMaterial3D_i5arm")
 script = ExtResource("5_jsk3o")
 
