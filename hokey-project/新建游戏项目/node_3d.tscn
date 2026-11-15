@@ -3,11 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cbecrqxtgb7h0" path="res://model_table/air-hockey-game-table (1).glb" id="1_noarx"]
 [ext_resource type="PackedScene" uid="uid://dcirh6l6evp02" path="res://paddle_blue.tscn" id="2_r3fl7"]
 [ext_resource type="Texture2D" uid="uid://cab14jvdlyxky" path="res://model_puck/texture/OIP.webp" id="3_a0tk4"]
-[ext_resource type="Script" uid="uid://bdc1fwaiugi4b" path="res://paddle_B.gd" id="3_jsk3o"]
 [ext_resource type="PackedScene" uid="uid://bdx4qofxnbsar" path="res://model_puck/puck_striker2.glb" id="4_jka67"]
-[ext_resource type="Script" uid="uid://0tu486qn2klw" path="res://puck.gd" id="5_jka67"]
-[ext_resource type="Script" uid="uid://dbmis8xn4p15s" path="res://paddle_R.gd" id="6_4arys"]
+[ext_resource type="Script" uid="uid://csxo81ygvmtdl" path="res://paddle.gd" id="4_wc5p8"]
 [ext_resource type="Script" uid="uid://dyufxofwmx4c8" path="res://blue_light.gd" id="6_i5arm"]
+[ext_resource type="Script" uid="uid://c34eyseh2o8nc" path="res://puckbody.gd" id="6_wc5p8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x7o7g"]
 size = Vector3(0.119384766, 0.63634443, 0.40845314)
@@ -21,9 +20,6 @@ roughness = 0.39
 emission_enabled = true
 emission = Color(0, 0.26182258, 0.2351875, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jsk3o"]
-points = PackedVector3Array(0.0015236007, 0.0024093147, 0.00015226162, -0.0016761904, -0.0010952384, -0.0006093746, -0.0015236007, -0.0010952384, -0.0010664876, 0.0015236007, -0.0010952384, 0.0010664876, -0.0012187492, 0.0021044482, 0.0012187492, 0.000457113, 0.0019522165, -0.0016761904, 0.0015236007, -0.0010952384, -0.0010664876, -0.0012187492, 0.0027141809, -0.0006093746, -0.0010664876, -0.0010952384, 0.0015236007, 0.0006093746, 0.0022570828, 0.0015236007, -0.0006093746, -0.0010952384, -0.0016761904, -0.0010664876, 0.0014951185, -0.0015236007, 0.00076163624, 0.0030190472, 0.00030452324, -0.0016761904, 0.0017999847, 0.0006093746, 0.0010664876, 0.0025615464, -0.0010664876, 0.0006093746, -0.0010952384, 0.0016761904, -0.0006093746, 0.0017999847, 0.0016761904, -0.0006093746, 0.0028664125, 0.0010664876, -0.0016761904, 0.0017999847, -0.0006093746, 0.0016761904, 0.0017999847, 0.0006093746, 0.0015236007, 0.0014951185, -0.0010664876, 0.0010664876, -0.0010952384, -0.0015236007, -0.000457113, 0.0028664125, -0.0010664876, -0.0015236007, -0.0010952384, 0.0010664876, 0.0010664876, 0.0014951185, 0.0015236007, 0.0016761904, -0.0010952384, -0.0006093746, -0.00076163624, 0.0030190472, 0.000457113, 0.0010664876, 0.0025615464, 0.0010664876, 0.0016761904, 0.0017999847, -0.0006093746, -0.0006093746, 0.0017999847, -0.0016761904, 0.00076163624, 0.0030190472, -0.000457113, -0.0015236007, 0.0024093147, 0.00030452324)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jka67"]
 albedo_color = Color(0.6903852, 0.18956074, 0.19164076, 1)
 albedo_texture = ExtResource("3_a0tk4")
@@ -33,21 +29,17 @@ roughness = 0.39
 emission_enabled = true
 emission = Color(0.5148712, 0.08195656, 9.62615e-08, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4arys"]
-points = PackedVector3Array(0.0015236007, 0.0024093147, 0.00015226162, -0.0016761904, -0.0010952384, -0.0006093746, -0.0015236007, -0.0010952384, -0.0010664876, 0.0015236007, -0.0010952384, 0.0010664876, -0.0012187492, 0.0021044482, 0.0012187492, 0.000457113, 0.0019522165, -0.0016761904, 0.0015236007, -0.0010952384, -0.0010664876, -0.0012187492, 0.0027141809, -0.0006093746, -0.0010664876, -0.0010952384, 0.0015236007, 0.0006093746, 0.0022570828, 0.0015236007, -0.0006093746, -0.0010952384, -0.0016761904, -0.0010664876, 0.0014951185, -0.0015236007, 0.00076163624, 0.0030190472, 0.00030452324, -0.0016761904, 0.0017999847, 0.0006093746, 0.0010664876, 0.0025615464, -0.0010664876, 0.0006093746, -0.0010952384, 0.0016761904, -0.0006093746, 0.0017999847, 0.0016761904, -0.0006093746, 0.0028664125, 0.0010664876, -0.0016761904, 0.0017999847, -0.0006093746, 0.0016761904, 0.0017999847, 0.0006093746, 0.0015236007, 0.0014951185, -0.0010664876, 0.0010664876, -0.0010952384, -0.0015236007, -0.000457113, 0.0028664125, -0.0010664876, -0.0015236007, -0.0010952384, 0.0010664876, 0.0010664876, 0.0014951185, 0.0015236007, 0.0016761904, -0.0010952384, -0.0006093746, -0.00076163624, 0.0030190472, 0.000457113, 0.0010664876, 0.0025615464, 0.0010664876, 0.0016761904, 0.0017999847, -0.0006093746, -0.0006093746, 0.0017999847, -0.0016761904, 0.00076163624, 0.0030190472, -0.000457113, -0.0015236007, 0.0024093147, 0.00030452324)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_hnlms"]
+height = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7o7g"]
-albedo_color = Color(0.41615593, 0.3958374, 0.08911853, 1)
+albedo_color = Color(0.6707688, 0.4719062, 0.010000993, 1)
 albedo_texture = ExtResource("3_a0tk4")
 metallic = 0.28
 metallic_specular = 0.32
 roughness = 0.46
 emission_enabled = true
-emission = Color(0.42048395, 0.71734256, 0.20754054, 1)
-emission_energy_multiplier = 0.65
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6iypd"]
-points = PackedVector3Array(1.984052, 0.592248, 3.8090057, -0.17319882, -0.055028558, -2.879012, 4.4567375, -0.055028558, 1.0892087, -1.826797, -0.055028558, 2.853323, -0.4378694, 0.5912394, -2.6157708, 3.8673544, 0.59058034, -1.244968, -2.4487734, 0.59248984, 1.1710366, 2.0315986, -0.055028558, 3.9564123, -2.3779964, -0.055028558, -0.8945563, 2.582798, -0.055028558, -2.6586704, 3.982872, 0.59164846, 2.1173213, -0.43806827, 0.5912853, 3.6929712, 1.5620766, 0.59242916, -2.8392868, -1.7963786, 0.5902516, -1.5570397, 4.1265707, -0.055028558, -1.1148978, 0.37800056, -0.055028558, 4.0669284, 3.6851969, -0.055028558, 2.853323, 4.307064, 0.59247965, -0.09427735, -2.598338, -0.055028558, 1.0892087, -1.385423, -0.055028558, -2.2172966, -2.0091736, 0.5906038, 2.3218436, -2.4486911, 0.59248215, -0.094282374, 3.0253785, 0.5902189, -2.1865945, 3.0253673, 0.5902172, 3.26398, 1.4803994, -0.055028558, -2.9895282, -0.72370744, -0.055028558, 3.7360706, -1.1669673, 0.5902172, 3.26398, 3.6851969, -0.055028558, -1.7766135, 0.2963283, 0.59242666, 3.9166603, 0.29632303, 0.5924293, -2.8392882, -2.3779964, -0.055028558, 1.9712658, 4.3071465, 0.59248734, 1.1710316)
+emission = Color(0.9080729, 0.59743655, 0.25265297, 1)
 
 [sub_resource type="Environment" id="Environment_pqhur"]
 background_mode = 1
@@ -56,7 +48,7 @@ background_color = Color(0.08235294, 0.0627451, 0.14117648, 1)
 [node name="Node3D" type="Node3D" unique_id=574067357]
 
 [node name="Air hockey table2" parent="." unique_id=259874424 instance=ExtResource("1_noarx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22396296, 0.012103081, 1.1906875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22566599, 0.012103081, 1.1889238)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Air hockey table2" unique_id=1128002633]
 
@@ -87,41 +79,34 @@ shape = SubResource("BoxShape3D_x7o7g")
 [node name="CollisionShape3D7" type="CollisionShape3D" parent="Air hockey table2/StaticBody3D" unique_id=2084474806]
 
 [node name="PaddleBlue" parent="." unique_id=533093440 instance=ExtResource("2_r3fl7")]
-transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.019606948, 0.87, 0.548)
-script = ExtResource("3_jsk3o")
+transform = Transform3D(14.996353, 0.0276993, -0.32957134, -0.036129955, 14.995046, -0.3837264, 0.32875398, 0.38442695, 14.991466, -0.050656825, 0.8616393, 0.54842)
 
 [node name="Paddle" parent="PaddleBlue" index="0" unique_id=1836951715]
 material_override = SubResource("StandardMaterial3D_i5arm")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="PaddleBlue" unique_id=1172923606]
-transform = Transform3D(0.9999797, 0.00016301702, 0.006372207, -0.00016311448, 0.99999994, 1.4839694e-05, -0.0063721985, -1.58716e-05, 0.99997985, -2.910383e-10, -0.0022089742, 0)
-shape = SubResource("ConvexPolygonShape3D_jsk3o")
+script = ExtResource("4_wc5p8")
 
 [node name="PaddleRed" parent="." unique_id=581782901 instance=ExtResource("2_r3fl7")]
-transform = Transform3D(14.996353, 0.027699279, -0.32957137, -0.036129955, 14.995047, -0.3837264, 0.32875398, 0.38442695, 14.991467, 0.22827893, 0.8811388, 1.8158437)
-script = ExtResource("6_4arys")
+transform = Transform3D(14.996353, 0.027699279, -0.32957137, -0.036129955, 14.995047, -0.3837264, 0.32875398, 0.38442695, 14.991467, -0.071317434, 0.8695477, 1.4565207)
 
 [node name="Paddle" parent="PaddleRed" index="0" unique_id=1836951715]
 material_override = SubResource("StandardMaterial3D_jka67")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PaddleRed" unique_id=1872900647]
-transform = Transform3D(2.8, 0, 0, 0, 2.8, 0, 0, 0, 2.8, 0, -0.002208984, 0)
-shape = SubResource("ConvexPolygonShape3D_4arys")
-
 [node name="Puck2" parent="." unique_id=994401809 instance=ExtResource("4_jka67")]
 transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0.06424403, 1.1945821, -0.9880376)
 
-[node name="Puck" parent="Puck2" index="0" unique_id=1745600836]
+[node name="puckbody" type="RigidBody3D" parent="Puck2" unique_id=1011193477]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4305115e-06, 0, 0)
+script = ExtResource("6_wc5p8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puck2/puckbody" unique_id=1325618415]
+shape = SubResource("CylinderShape3D_hnlms")
+
+[node name="Puck" parent="Puck2" index="1" unique_id=822244714]
 transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 13.076447, -9.221506, 84.12697)
 material_override = SubResource("StandardMaterial3D_x7o7g")
-script = ExtResource("5_jka67")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Puck2" unique_id=332429699]
-transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 13.076447, -9.221506, 84.12697)
-shape = SubResource("ConvexPolygonShape3D_6iypd")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1262472059]
-transform = Transform3D(1, 0, 0, 0, 0.71325046, 0.70090926, 0, -0.70090926, 0.71325046, 0.21380073, 1.2895267, 2.1123455)
+transform = Transform3D(1, 0, 0, 0, 0.71325046, 0.70090926, 0, -0.70090926, 0.71325046, 0.22804642, 1.495193, 2.1123455)
 current = true
 near = 0.042
 far = 2862.42
@@ -131,23 +116,20 @@ environment = SubResource("Environment_pqhur")
 
 [node name="main light" type="DirectionalLight3D" parent="." unique_id=1106701554]
 transform = Transform3D(1, 0, 0, 0, -0.54756314, 0.83676445, 0, -0.83676445, -0.54756314, 0.25232542, 1.2608476, 1.404503)
-light_color = Color(0.8392157, 0.9137255, 1, 1)
-light_energy = 0.41
+light_color = Color(0.9009169, 0.8944152, 0.81694055, 1)
+light_energy = 2.1
 
 [node name="Blue Light" type="OmniLight3D" parent="." unique_id=1752234653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22345543, 1.2052267, 0.9799292)
-light_color = Color(0.17254902, 0.5137255, 1, 1)
-light_energy = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22345543, 1.2052267, 0.76037526)
+light_color = Color(0.5007926, 0.9460673, 0.908381, 1)
+light_energy = 0.563
 script = ExtResource("6_i5arm")
 
 [node name="red light" type="OmniLight3D" parent="." unique_id=1999198257]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25014842, 1.1588413, 1.6997616)
-light_color = Color(0.8117647, 0.18431373, 0.34901962, 1)
-light_energy = 2.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25014842, 1.2207623, 1.6718931)
+light_color = Color(0.93699366, 0.68328834, 0.7779595, 1)
+light_energy = 1.014
 script = ExtResource("6_i5arm")
-color_offset = 3
-
-[connection signal="input_event" from="PaddleRed" to="PaddleRed" method="_on_input_event"]
 
 [editable path="PaddleBlue"]
 [editable path="PaddleRed"]
