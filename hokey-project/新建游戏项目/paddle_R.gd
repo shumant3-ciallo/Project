@@ -10,6 +10,10 @@ var plane
 var paddle_velocity = Vector3.ZERO
 var strike_velocity := Vector3.ZERO
 var previous_position;
+var boundary = 0.0
+var paddle_radius = 0.072
+@export var center_line: Marker3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	start_position = global_position;
@@ -63,6 +67,8 @@ func _physics_process(delta: float) -> void:
 		if hit != null:
 			var target: Vector3 = hit + drag_offset
 			target.y = start_position.y
+			var middle_z := center_line.global_position.z
+			target.z = maxf(target.z, middle_z + paddle_radius)
 			var motion := target - global_position
 			motion.y = 0.0
 			motion = motion.limit_length(max_speed * delta)
