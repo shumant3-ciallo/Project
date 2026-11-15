@@ -14,10 +14,12 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var before = global_position
+	var puckCenter = puck.get_node("CollisionShape3D").global_position
+	var target: Vector3 = global_position
 
-	var target = global_position
-	target.x = puck.global_position.x
-	target.z = puck.global_position.z
+	
+	target.x = puckCenter.x
+	target.z = puckCenter.z
 
 	# Stay on the AI's side of the table
 	target.z = min(target.z, start_position.z)
@@ -31,3 +33,7 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(movement)
 
 	paddle_velocity = (global_position - before) / delta
+
+
+func _on_puck_2_body_entered(body: Node) -> void:
+	pass # Replace with function body.

@@ -65,3 +65,7 @@ func _physics_process(delta: float) -> void:
 			move_and_collide(target - global_position)
 
 	paddle_velocity = (global_position - before) / delta
+
+
+func _on_puck_2_body_entered(body: Node) -> void:
+	pass # Replace with function body.

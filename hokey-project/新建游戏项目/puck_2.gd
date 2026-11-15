@@ -20,5 +20,5 @@ func _on_body_entered(body: Node) -> void:
 		var future_offset = offset - body.paddle_velocity * 0.01
 		future_offset.y = 0.0
 		if future_offset.length_squared() < offset.length_squared():
-			var force = body.paddle_velocity*1.3
+			var force = body.paddle_velocity*2.0
 			apply_central_impulse(force) # Replace with function body.

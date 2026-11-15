@@ -53,16 +53,16 @@ height = 0.59894365
 radius = 3.4731798
 
 [node name="Puck2" type="RigidBody3D" unique_id=1585656555]
-transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0, 0, 0)
+transform = Transform3D(0.02, 0, 0, 0, 0.04, 0, 0, 0, 0.02, 0, -0.20862389, -0.4508679)
 linear_damp = 0.5
 script = ExtResource("1_c5g8q")
 
 [node name="Puck" type="MeshInstance3D" parent="." unique_id=1779382445]
-transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 13.076447, -9.221506, 84.12697)
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, 13.076447, 25.730463, 84.12697)
 material_override = SubResource("StandardMaterial3D_x7o7g")
 mesh = SubResource("ArrayMesh_oeuyt")
 script = ExtResource("2_c5g8q")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2037758692]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.005684, -8.921894, 84.665695)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.005683, 26.039864, 84.665695)
 shape = SubResource("CylinderShape3D_puck_base")
