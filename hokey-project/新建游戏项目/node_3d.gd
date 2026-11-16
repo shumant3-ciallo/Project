@@ -16,3 +16,7 @@ func _on_blue_goal_body_entered(body: Node3D) -> void:
 	if body.name == "Puck" or body.name =="Puck2":
 		red_score += 1
 		print("Red Scored! Score:", red_score)
+func _on_red_goal_body_entered(body: Node3D)-> void:
+	if body.name == "Puck" or body.name == "Puck2":
+		blue_score += 1
+		print("Blue Scored! Score:", blue_score)

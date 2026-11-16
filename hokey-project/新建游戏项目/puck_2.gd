@@ -53,5 +53,10 @@ func _on_body_entered(body: Node) -> void:
 		future_offset.y = 0.0
 
 		if future_offset.length_squared() < offset.length_squared():
+<<<<<<< HEAD
 			var force = body.strike_velocity * 1.2
 			apply_central_impulse(force)
+=======
+			var force = body.strike_velocity*1.7
+			apply_central_impulse(force) # Replace with function body.
+>>>>>>> 07695520d6d09de88b7f9dc43f750209a02c8b1a
