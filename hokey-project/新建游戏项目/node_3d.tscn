@@ -198,6 +198,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.328)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26797253, 0)
 shape = SubResource("BoxShape3D_pqhur")
 
+[node name="GoalSound" type="AudioStreamPlayer3D" parent="." unique_id=1795901449]
+
 [connection signal="input_event" from="PaddleRed" to="PaddleRed" method="_on_input_event"]
 [connection signal="body_entered" from="Puck2" to="PaddleBlue" method="_on_puck_2_body_entered"]
 [connection signal="body_entered" from="Puck2" to="PaddleRed" method="_on_puck_2_body_entered"]
